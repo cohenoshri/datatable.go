@@ -155,13 +155,15 @@ func (d *DataTable) GetValues(rowIndex int) []interface{} {
 }
 func (d *DataTable) getSequenceValues(r map[string]interface{}) []interface{} {
 	vals := make([]interface{}, d.ColumnCount())
-	for i, col := range d.Columns {
-		var ok bool
-		if vals[i], ok = r[col.Name]; !ok {
-			//panic(fmt.Errorf("can't find column:[%s] at %v", col.Name, r))
-		}
+	/*
+		for i, col := range d.Columns {
+			var ok bool
+			if vals[i], ok = r[col.Name]; !ok {
+				//panic(fmt.Errorf("can't find column:[%s] at %v", col.Name, r))
+			}
 
-	}
+		}
+	*/
 	return vals
 
 }
